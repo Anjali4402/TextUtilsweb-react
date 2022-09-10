@@ -5,14 +5,17 @@ export default function TextForm(props) {
     const handleUpClick = ()=>{
         let newText = text.toUpperCase();
         setText(newText);
+        props.upperAlert('uppercase has been done','success');
     }
     const handleLoClick = ()=>{
         let newText = text.toLowerCase();
         setText(newText);
+        props.upperAlert('lowerCase has been done','success');
     }
-    const handleEmailClick = ()=>{
-        let newText = text.split('@')
-        setText(newText[1])
+    const handleClearText = ()=>{
+        let newText = " ";
+        setText(newText);
+        props.upperAlert('Text is clear','success');
     }
     const handleOnChange = (event)=>{
         setText(event.target.value);
@@ -28,7 +31,7 @@ export default function TextForm(props) {
                 </div>   
                 <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to uppercase</button>     
                 <button className="btn btn-primary mx-2" onClick={handleLoClick}>Convert to lowercase</button>     
-                <button className="btn btn-primary mx-2" onClick={handleEmailClick}>extract name form email</button>     
+                <button className="btn btn-primary mx-2" onClick={handleClearText}>Clear Text</button>     
             </div>
             <div className="container my-3"style={{color: props.mode === "dark"?"white":"black"}}>
                 <h2>Your text summary</h2>
