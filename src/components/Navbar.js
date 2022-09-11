@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom';
-
+import './Navbar.css'
 export default function Navbar(props) {
     return (
         <div>
@@ -24,6 +24,12 @@ export default function Navbar(props) {
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                             <button className="btn btn-primary" type="submit">Search</button>
                         </form> */}
+                        <div className="color-picker" onClick={props.changeColor}>
+                            <div className="box light-green" style={{backgroundColor:"#006400"}} ></div>
+                            <div className="box light-red" style={{backgroundColor:"#DC143C"}}></div>
+                            <div className="box orange" style={{backgroundColor:'#008B8B'}}></div>
+                            <div className='box yellow' style={{backgroundColor:'#8B0000'}}></div>
+                        </div>
                         <div className={`form-check form-switch text-${props.mode === "light"?"dark":"light"}`}>
                             <input type="checkbox" className="form-check-input" onClick={props.toggleMode} id="flexSwitchCheckDefault"/>
                             <label htmlFor="flexSwitchCheckDefault" className="form-check-label">Enable DarkMode</label>

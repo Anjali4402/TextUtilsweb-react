@@ -27,11 +27,11 @@ export default function TextForm(props) {
             <div className="container " style={{color: props.mode === "dark"?"white":"black"}}>
                 <h1>{props.heading}</h1>
                 <div className='mb-3'>                 
-                    <textarea className='form-control' value={text} onChange={handleOnChange} style={{backgroundColor: props.mode === "light"?"white":"#042743" , color: props.mode === "dark"?"white":"black"}} id='myBox' rows="8"></textarea>
+                    <textarea className='form-control' value={text} onChange={handleOnChange} style={{backgroundColor: props.mode === "light"?"white":"gray" , color: props.mode === "dark"?"white":"black"}} id='myBox' rows="8"></textarea>
                 </div>   
-                <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to uppercase</button>     
-                <button className="btn btn-primary mx-2" onClick={handleLoClick}>Convert to lowercase</button>     
-                <button className="btn btn-primary mx-2" onClick={handleClearText}>Clear Text</button>     
+                <button className="btn btn-primary mx-2" onClick={handleUpClick} style={{backgroundColor:props.oldColor}}>Convert to uppercase</button>     
+                <button className="btn btn-primary mx-2" onClick={handleLoClick} style={{backgroundColor:props.oldColor}}>Convert to lowercase</button>     
+                <button className="btn btn-primary mx-2" onClick={handleClearText} style={{backgroundColor:props.oldColor}}>Clear Text</button>     
             </div>
             <div className="container my-3"style={{color: props.mode === "dark"?"white":"black"}}>
                 <h2>Your text summary</h2>
